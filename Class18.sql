@@ -87,9 +87,9 @@ delimiter ;
 call get_customers_by_country('Canada', @lista);
 select @lista;
 
-
 -- 3)
 
+delimiter //
 create function inventory_in_stock(p_inventory_id int)
 returns boolean
 reads sql data
@@ -115,4 +115,5 @@ begin
     else
         return true;
     end if;
-end;
+end //
+delimiter ;
